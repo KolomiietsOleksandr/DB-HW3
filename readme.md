@@ -7,64 +7,64 @@ This is the database schema for the Beer Shop:
 ```mermaid
 erDiagram
     CUSTOMERS {
-        VARCHAR(36) ID PK
-        VARCHAR(200) First_Name
-        VARCHAR(200) Last_Name
-        VARCHAR(200) Email
-        VARCHAR(20) Phone
-        VARCHAR(500) Address
+        VARCHAR ID PK
+        VARCHAR First_Name
+        VARCHAR Last_Name
+        VARCHAR Email
+        VARCHAR Phone
+        VARCHAR Address
         BOOLEAN Active
     }
 
     PRODUCTS {
-        VARCHAR(36) ID PK
-        VARCHAR(200) Name
-        VARCHAR(500) Description
-        VARCHAR(36) Category_ID FK
-        VARCHAR(36) Supplier_ID FK
-        DECIMAL(10, 2) Price
-        DECIMAL(5, 2) Alcohol_Content
-        VARCHAR(10) Volume
+        VARCHAR ID PK
+        VARCHAR Name
+        VARCHAR Description
+        VARCHAR Category_ID FK
+        VARCHAR Supplier_ID FK
+        DECIMAL Price
+        DECIMAL Alcohol_Content
+        VARCHAR Volume
         INT Stock_Quantity
         BOOLEAN Active
     }
 
     CATEGORIES {
-        VARCHAR(36) ID PK
-        VARCHAR(200) Name
-        VARCHAR(500) Description
+        VARCHAR ID PK
+        VARCHAR Name
+        VARCHAR Description
     }
 
     SUPPLIERS {
-        VARCHAR(36) ID PK
-        VARCHAR(200) Name
-        VARCHAR(200) Contact_Person
-        VARCHAR(20) Phone
-        VARCHAR(200) Email
-        VARCHAR(500) Address
+        VARCHAR ID PK
+        VARCHAR Name
+        VARCHAR Contact_Person
+        VARCHAR Phone
+        VARCHAR Email
+        VARCHAR Address
         BOOLEAN Active
     }
 
     ORDERS {
-        VARCHAR(36) ID PK
-        VARCHAR(36) Customer_ID FK
+        VARCHAR ID PK
+        VARCHAR Customer_ID FK
         DATE Order_Date
-        VARCHAR(20) Status
-        DECIMAL(10, 2) Total_Amount
+        VARCHAR Status
+        DECIMAL Total_Amount
     }
 
     ORDER_ITEMS {
-        VARCHAR(36) ID PK
-        VARCHAR(36) Order_ID FK
-        VARCHAR(36) Product_ID FK
+        VARCHAR ID PK
+        VARCHAR Order_ID FK
+        VARCHAR Product_ID FK
         INT Quantity
-        DECIMAL(10, 2) Price
+        DECIMAL Price
     }
 
     INVENTORY {
-        VARCHAR(36) ID PK
-        VARCHAR(36) Product_ID FK
-        VARCHAR(36) Supplier_ID FK
+        VARCHAR ID PK
+        VARCHAR Product_ID FK
+        VARCHAR Supplier_ID FK
         INT Quantity
         DATE Date_Added
     }
