@@ -2,16 +2,12 @@ import mysql.connector
 from mysql.connector import Error
 import uuid
 import os
-from dotenv import load_dotenv
-
-# Load environment variables
-load_dotenv()
 
 # Connection settings
-HOST = os.getenv('host')
-USER = os.getenv('user')
-PASSWORD = os.getenv('password')
-DATABASE = os.getenv('database')
+HOST = 'localhost'
+USER = 'root'
+PASSWORD = 'qwerty1234'
+DATABASE = 'UNI_DB'
 
 def create_connection():
     """Create a database connection"""
